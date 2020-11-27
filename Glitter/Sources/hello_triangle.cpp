@@ -118,6 +118,9 @@ namespace gl_examples
         glGenBuffers(1, &VBO);
         glBindVertexArray(VAO);
 
+        std::cout << "VAO:" << VAO << std::endl;
+        std::cout << "VBO:" << VBO << std::endl;
+
         glBindBuffer(GL_ARRAY_BUFFER, VBO);
         glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
