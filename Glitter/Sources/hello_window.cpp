@@ -1,6 +1,5 @@
 // Local Headers
 #include "glitter.hpp"
-#include "gl_examples.hpp"
 
 // System Headers
 #include <glad/glad.h>
@@ -17,7 +16,7 @@ namespace gl_examples
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-        glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+        glfwWindowHint(GLFW_RESIZABLE, GL_TRUE);
         auto mWindow = glfwCreateWindow(mWidth, mHeight, "OpenGL", nullptr, nullptr);
 
         // Check for Valid Context

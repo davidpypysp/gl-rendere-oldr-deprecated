@@ -6,6 +6,7 @@
 namespace gl_examples
 {
     int HelloWindow();
-}
+    int HelloTriangle();
+} // namespace gl_examples
 
 #endif
