@@ -12,5 +12,5 @@
 
 int main(int argc, char *argv[])
 {
-    return gl_examples::HelloTriangle();
+    return gl_examples::Transformations();
 }

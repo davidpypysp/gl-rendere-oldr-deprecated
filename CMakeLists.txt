@@ -47,6 +47,7 @@ file(GLOB PROJECT_CONFIGS CMakeLists.txt
                          .gitattributes
                          .gitignore
                          .gitmodules)
+file(GLOB PROJECT_RESOURCES Glitter/Resources/*)
 
 source_group("Headers" FILES ${PROJECT_HEADERS})
 source_group("Shaders" FILES ${PROJECT_SHADERS})
@@ -66,5 +67,14 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 
 add_custom_command(
     TARGET ${PROJECT_NAME} POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/Glitter/Shaders $<TARGET_FILE_DIR:${PROJECT_NAME}>
-    DEPENDS ${PROJECT_SHADERS})
+    COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SHADERS} $<TARGET_FILE_DIR:${PROJECT_NAME}>
+    # DEPENDS ${PROJECT_SHADERS}
+    COMMENT "Copy shader files..."
+)
+add_custom_command(
+    TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_RESOURCES} $<TARGET_FILE_DIR:${PROJECT_NAME}>
+    # DEPENDS ${PROJECT_SHADERS}
+    COMMENT "Copy image files..."
+)
+

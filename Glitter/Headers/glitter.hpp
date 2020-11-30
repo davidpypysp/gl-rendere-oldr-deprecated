@@ -4,6 +4,7 @@
 #pragma once
 
 // System Headers
+#include <GLFW/glfw3.h>
 #include <assimp/Importer.hpp>
 #include <assimp/postprocess.h>
 #include <assimp/scene.h>
