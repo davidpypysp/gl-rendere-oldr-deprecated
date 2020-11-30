@@ -2,7 +2,6 @@
 
 #include "shader.hpp"
 #include "glitter.hpp"
-#include "gl_examples.hpp"
 
 namespace gl_examples
 {

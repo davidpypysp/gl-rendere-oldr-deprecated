@@ -2,7 +2,6 @@
 #include <GLFW/glfw3.h>
 
 #include "glitter.hpp"
-#include "gl_examples.hpp"
 
 namespace gl_examples
 {

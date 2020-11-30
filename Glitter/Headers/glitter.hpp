@@ -20,8 +20,36 @@
 
 #include <iostream>
 
-// Define Some Constants
-const int mWidth = 1280;
-const int mHeight = 800;
+#include "camera.hpp"
+#include "shader.hpp"
+
+namespace gl_examples
+{
+    // Define Some Constants
+    const int mWidth = 1280;
+    const int mHeight = 800;
+
+    extern Camera camera;
+    extern float lastX;
+    extern float lastY;
+    extern bool firstMouse;
+
+    // timing
+    extern float deltaTime; // time between current frame and last frame
+    extern float lastFrame;
+
+    void framebuffer_size_callback(GLFWwindow *window, int width, int height);
+    void processInput(GLFWwindow *window);
+    void mouse_callback(GLFWwindow *window, double xpos, double ypos);
+    void scroll_callback(GLFWwindow *window, double xoffset, double yoffset);
+
+    int HelloWindow();
+    int HelloTriangle();
+    int Shaders();
+    int TexturesCombined();
+    int Transformations();
+    int CoordinateSystemMultiple();
+    int CameraClass();
+} // namespace gl_examples
 
 #endif //~ Glitter Header

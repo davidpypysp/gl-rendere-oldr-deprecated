@@ -4,7 +4,6 @@
 #include <iostream>
 #include <cmath>
 
-#include "gl_examples.hpp"
 #include "glitter.hpp"
 #include "shader.hpp"
 
