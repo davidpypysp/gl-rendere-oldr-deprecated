@@ -50,6 +50,7 @@ namespace gl_examples
     int Transformations();
     int CoordinateSystemMultiple();
     int CameraClass();
+    int ColorsProgram();
 } // namespace gl_examples
 
 #endif //~ Glitter Header
