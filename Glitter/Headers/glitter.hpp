@@ -52,6 +52,8 @@ namespace gl_examples
     int CameraClass();
     int ColorsProgram();
     int BasicLightingProgram();
+    int MaterialProgram();
+    int MultipleLights();
 } // namespace gl_examples
 
 #endif //~ Glitter Header

@@ -72,5 +72,5 @@ namespace gl_examples
 
 int main(int argc, char *argv[])
 {
-    return gl_examples::BasicLightingProgram();
+    return gl_examples::MultipleLights();
 }
