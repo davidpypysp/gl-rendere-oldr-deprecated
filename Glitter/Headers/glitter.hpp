@@ -22,6 +22,7 @@
 
 #include "camera.hpp"
 #include "shader.hpp"
+#include "model.hpp"
 
 namespace gl_examples
 {
@@ -54,6 +55,7 @@ namespace gl_examples
     int BasicLightingProgram();
     int MaterialProgram();
     int MultipleLights();
+    int ModelProgram();
 } // namespace gl_examples
 
 #endif //~ Glitter Header
