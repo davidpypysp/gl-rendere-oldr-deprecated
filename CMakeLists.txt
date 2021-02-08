@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project(Glitter)
+project(gl_renderer)
 
 option(GLFW_BUILD_DOCS OFF)
 option(GLFW_BUILD_EXAMPLES OFF)
@@ -27,7 +27,7 @@ else()
     endif()
 endif()
 
-include_directories(Glitter/Headers/
+include_directories(src/Headers/
                     Glitter/Vendor/assimp/include/
                     Glitter/Vendor/bullet/src/
                     Glitter/Vendor/glad/include/
@@ -36,18 +36,17 @@ include_directories(Glitter/Headers/
                     Glitter/Vendor/stb/)
 
 file(GLOB VENDORS_SOURCES Glitter/Vendor/glad/src/glad.c)
-file(GLOB PROJECT_HEADERS Glitter/Headers/*.hpp)
-file(GLOB PROJECT_SOURCES Glitter/Sources/*.cpp)
-file(GLOB PROJECT_SHADERS Glitter/Shaders/*.comp
-                          Glitter/Shaders/*.frag
-                          Glitter/Shaders/*.geom
-                          Glitter/Shaders/*.vert)
+file(GLOB PROJECT_HEADERS src/Headers/*.hpp)
+file(GLOB PROJECT_SOURCES src/Sources/*.cpp)
+file(GLOB PROJECT_SHADERS src/Shaders/*.comp
+                          src/Shaders/*.frag
+                          src/Shaders/*.geom
+                          src/Shaders/*.vert)
 file(GLOB PROJECT_CONFIGS CMakeLists.txt
                           Readme.md
                          .gitattributes
                          .gitignore
                          .gitmodules)
-file(GLOB PROJECT_RESOURCES Glitter/Resources/*)
 
 source_group("Headers" FILES ${PROJECT_HEADERS})
 source_group("Shaders" FILES ${PROJECT_SHADERS})
@@ -73,8 +72,8 @@ add_custom_command(
 )
 add_custom_command(
     TARGET ${PROJECT_NAME} POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_RESOURCES} $<TARGET_FILE_DIR:${PROJECT_NAME}>
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_LIST_DIR}/resources/ $<TARGET_FILE_DIR:${PROJECT_NAME}>/resources
     # DEPENDS ${PROJECT_SHADERS}
-    COMMENT "Copy image files..."
+    COMMENT "Copy resource..."
 )
 
