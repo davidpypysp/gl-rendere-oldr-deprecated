@@ -38,7 +38,7 @@ namespace gl_examples
 
         Shader ourShader("3.1.1.model_loading.vert", "3.1.1.model_loading.frag");
 
-        Model ourModel("backpack/backpack.obj");
+        Model ourModel("resources/backpack/backpack.obj");
 
         while (!glfwWindowShouldClose(window))
         {
